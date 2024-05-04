@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="continuar-respuesta-bien-y-mal.css" />
+    <script
+      src="https://kit.fontawesome.com/5a207dbdd5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="waveWrapper waveAnimation">
+      <div class="waveWrapperInner bgTop">
+        <div
+          class="waveolas waveTop"
+          style="
+            background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png');
+          "
+        ></div>
+      </div>
+      <div class="waveWrapperInner bgMiddle">
+        <div
+          class="waveolas waveMiddle"
+          style="
+            background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png');
+          "
+        ></div>
+      </div>
+      <div class="waveWrapperInner bgBottom">
+        <div
+          class="waveolas waveBottom"
+          style="
+            background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png');
+          "
+        ></div>
+      </div>
+    </div>
+    <div class="contenedor-robot-respuesta-bien-o-mal">
+      <div id="primary-content" class="centered-pen">
+        <h1 class="display-3">Hola Mamá, esto es parte de tus hijos❤️</h1>
+        <p class="lead">
+          Me llamo Felix!, soy un robot que quiere hacerte conocer un poco mas
+          lo que es Alexandra!, La mejor mamá ¡Dale click al robot!
+          <br />
+          y luego a cada una de sus opciones!
+        </p>
+        <div class="personal-assistant">
+          <div id="felix" class="felix" onclick="activateFelix();">
+            <div class="eyes">
+              <div class="eye left"></div>
+              <div class="eye right"></div>
+            </div>
+          </div>
+          <div class="platform"></div>
+          <ul class="command-list">
+            <li>
+              <a href="https://www.youtube.com/@Pimpinela" target="_blank">
+                <i class="fa-solid fa-person white-icon"></i>
+              </a>
+            </li>
+            <li><i class="fa-solid fa-heart" onclick="getTime();"></i></li>
+            <li><i class="far fa-calendar-alt" onclick="getDate();"></i></li>
+            <li>
+              <i class="fa-solid fa-seedling" onclick="tellJoke();"></i>
+            </li>
+            <li><i class="fa-solid fa-music" onclick="searchGoogle();"></i></li>
+            <li>
+              <i
+                class="fa-solid fa-people-roof"
+                onclick="showInspiration();"
+              ></i>
+            </li>
+            <p class="hey-felix lead"></p>
+          </ul>
+        </div>
+        <div id="response-frame" class="response-frame">
+          <p id="response-message" class="lead"></p>
+          <i class="fas fa-times" onclick="closeResponse();"></i>
+        </div>
+      </div>
+      <div class="boton-siguiente-continuar">
+        <button class="btn">
+          <i class="animation"></i
+          ><a href="/ultima-seccion/ultima-seccion.html"
+            >una vez hayas visto todo dale click aqui! </a
+          ><i class="animation"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="continuar-respuesta-bien-y-mal.js"></script>
+</html>

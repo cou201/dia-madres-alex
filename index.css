@@ -1,0 +1,265 @@
+/*Background*/
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+.waveWrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1px;
+  background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+}
+.bgTop {
+  z-index: 15;
+  opacity: 0.5;
+}
+.bgMiddle {
+  z-index: 10;
+  opacity: 0.75;
+}
+.bgBottom {
+  z-index: 5;
+}
+.waveolas {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+.waveTop {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+  -webkit-animation: move-wave 3s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.waveMiddle {
+  background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 15s linear infinite;
+}
+/*Saludo*/
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor-inicio-como-estas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  z-index: 99;
+}
+@media screen and (min-width: 769px) {
+  .contenedor-inicio-como-estas {
+    position: relative;
+    left: -10%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contenedor-inicio-como-estas {
+    position: relative;
+    left: -20%;
+  }
+}
+body {
+  font-family: "Work Sans", sans-serif;
+  letter-spacing: 2vmin;
+  background: black;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 15vmin;
+  position: absolute;
+}
+
+.border {
+  color: black;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+    1px 1px 0 white;
+}
+
+.wave {
+  color: white;
+  animation: wave 3s ease-in-out infinite;
+}
+
+.two {
+  transform: translateY(0.8em);
+}
+
+@media screen and (min-width: 768px) {
+  .two {
+    transform: translateY(0.8em);
+    font-size: 8vmin;
+    top: -5px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .two {
+    transform: translateY(0.8em);
+    font-size: 8vmin;
+    top: -1px;
+  }
+}
+.three {
+  transform: translateY(-0.8em);
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 47%,
+      10% 48%,
+      33% 54%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+/*Botones*/
+
+.botones-bien-mal {
+  display: flex;
+  position: absolute;
+  z-index: 9999;
+  top: 75%;
+  left: 40%;
+}
+@media screen and (max-width: 768px) {
+  .botones-bien-mal {
+    display: flex;
+    position: absolute;
+    z-index: 9999;
+    top: 65%;
+    left: 46px;
+  }
+}
+.botones-bien-mal a {
+  text-decoration: none;
+  color: white;
+}
+button {
+  padding: 0;
+  margin: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+button {
+  --primary-color: #111;
+  --hovered-color: #c84747;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+button p::before {
+  position: absolute;
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+button:hover::after {
+  width: 100%;
+}
+
+button:hover p::before {
+  width: 100%;
+}
+
+button:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color);
+}
+
+button svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
